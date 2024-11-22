@@ -1,0 +1,6 @@
+var/
+public/
+
+
+vendor/*
+!vendor/jrp/

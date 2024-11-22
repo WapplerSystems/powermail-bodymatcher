@@ -1,0 +1,25 @@
+plugin.tx_powermail {
+    settings.setup {
+        spamshield {
+            methods {
+
+                # Check mails using regex white/blacklist
+                1 {
+                    _enable = 1
+                    name = Body Matcher
+                    class = Ws\Powermail\Domain\Validator\SpamShield\BodyMatcherMethod
+                    indication = 9
+                    configuration {
+                        pattern_blacklist {
+                          // TODO configurable list of regexes here
+                        }
+                        pattern_whitelist {
+                          // TODO configurable list of regexes here
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

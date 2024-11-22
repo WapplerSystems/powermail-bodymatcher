@@ -1,0 +1,47 @@
+{
+  "name": "wapplersystems/powermail_bodymatcher",
+  "type": "typo3-cms-extension",
+  "description": "Powermail BodyMatcher",
+  "authors": [
+    {
+      "name": "Christian Volkmann",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "typo3/cms-core": "^12.4",
+    "in2code/powermail": "^12.5"
+  },
+  "require-dev": {
+    "typo3/testing-framework": "^8.0",
+    "phpstan/phpstan": "^1.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "WapplerSystems\\PowermailBodyMatcher\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WapplerSystems\\PowermailBodyMatcher\\Tests\\": "Tests"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "web-dir": ".Build/public",
+      "extension-key": "ws_powermail_bodymatcher"
+    }
+  }
+}
