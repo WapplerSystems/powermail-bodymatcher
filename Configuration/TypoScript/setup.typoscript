@@ -1,25 +1,40 @@
 plugin.tx_powermail {
     settings.setup {
-        spamshield {
-            methods {
-
-                # Check mails using regex white/blacklist
-                1 {
-                    _enable = 1
-                    name = Body Matcher
-                    class = Ws\Powermail\Domain\Validator\SpamShield\BodyMatcherMethod
-                    indication = 9
-                    configuration {
-                        pattern_blacklist {
-                          // TODO configurable list of regexes here
-                        }
-                        pattern_whitelist {
-                          // TODO configurable list of regexes here
-                        }
+        spamshield.methods {
+            100 {
+                _enable = 1
+                name = Match URLs in Mail Body
+                class = WapplerSystems\PowermailBodymatcher\Domain\Validator\SpamShield\BodymatcherMethod
+                indication = 9
+                configuration {
+                    pattern_blacklist {
+                        # each pattern will be matched against each field in the mail form, e.g. subject, body, ...
+                        # whenever a match is detected, the mail is marked as spam
+                        1 = /https?:\/\//i
+                    }
+                    pattern_whitelist {
+                        # whenever one of these patterns is detected, the blacklist is ignored
+                        # e.g. the current domain
+                        #      /https?:\/\/example.com/i
                     }
                 }
-                
             }
+
+            // 110 {
+            //     _enable = 1
+            //     name = Match 
+            //     class = Ws\Powermail\Domain\Validator\SpamShield\BodyMatcherMethod
+            //     indication = 9
+            //     configuration {
+            //         pattern_blacklist {
+            //             1 = /https?:\\/\\/\\S+/i
+            //         }
+            //         pattern_whitelist {
+                        
+            //         }
+            //     }
+            // }
+                
         }
     }
 }

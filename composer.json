@@ -1,7 +1,7 @@
 {
   "name": "wapplersystems/powermail-bodymatcher",
   "type": "typo3-cms-extension",
-  "description": "Powermail BodyMatcher",
+  "description": "Powermail Bodymatcher",
   "authors": [
     {
       "name": "Christian Volkmann",
@@ -14,17 +14,11 @@
     "in2code/powermail": "^12.5"
   },
   "require-dev": {
-    "typo3/testing-framework": "^8.0",
     "phpstan/phpstan": "^1.11"
   },
   "autoload": {
     "psr-4": {
-      "WapplerSystems\\PowermailBodyMatcher\\": "Classes"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "WapplerSystems\\PowermailBodyMatcher\\Tests\\": "Tests"
+      "WapplerSystems\\PowermailBodymatcher\\": "Classes"
     }
   },
   "config": {
@@ -32,11 +26,6 @@
       "typo3/class-alias-loader": true,
       "typo3/cms-composer-installers": true
     }
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-    ]
   },
   "extra": {
     "typo3/cms": {
