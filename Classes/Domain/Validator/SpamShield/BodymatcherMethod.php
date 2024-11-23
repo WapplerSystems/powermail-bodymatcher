@@ -68,8 +68,8 @@ class BodymatcherMethod extends AbstractMethod
      */
     public function spamCheck(): bool
     {
-        DebugUtility::debug($this->getFieldAnswers());
-        DebugUtility::debug($this->configuration);
+        // DebugUtility::debug($this->getFieldAnswers(), header: 'Form Answers');
+        // DebugUtility::debug($this->configuration, header: 'BodymatcherMethod Configuration');
         foreach($this->getFieldAnswers() as $fieldValue) {
             if ($this->isSpam($fieldValue))
                 return true;
