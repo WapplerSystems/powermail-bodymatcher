@@ -4,7 +4,7 @@ Plugin for [Powermail](https://extensions.typo3.org/extension/powermail) which a
 
 ## Installation
 ```bash
-composer req gh:wapplersystems/powermail-bodymatcher
+composer req wapplersystems/powermail-bodymatcher
 ```
 
 
